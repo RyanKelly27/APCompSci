@@ -45,7 +45,7 @@ public class SortStringArray
 		{
 			System.out.print(str[i]+"\t");
 		}
-		System.out.println();
+		System.out.println(str[str.length-1]);
 		
 	}
 
