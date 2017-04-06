@@ -7,26 +7,27 @@ public class BoggleGUI extends GBFrame
 {
 	public static ArrayList<Character> list = new ArrayList<Character>();
 	public static String wordCreated = "";
+	public static ArrayList<Button> used = new ArrayList<Button>();
 	
 	public Button newGame;
 	public Button resetWord;
 	public Button submitWord;
-	public Button letter0;
-	public Button letter1;
-	public Button letter2;
-	public Button letter3;
-	public Button letter4;
-	public Button letter5;
-	public Button letter6;
-	public Button letter7;
-	public Button letter8;
-	public Button letter9;
-	public Button letter10;
-	public Button letter11;
-	public Button letter12;
-	public Button letter13;
-	public Button letter14;
-	public Button letter15;
+	public static Button letter0;
+	public static Button letter1;
+	public static Button letter2;
+	public static Button letter3;
+	public static Button letter4;
+	public static Button letter5;
+	public static Button letter6;
+	public static Button letter7;
+	public static Button letter8;
+	public static Button letter9;
+	public static Button letter10;
+	public static Button letter11;
+	public static Button letter12;
+	public static Button letter13;
+	public static Button letter14;
+	public static Button letter15;
 	
 	public BoggleGUI()
 	{
@@ -88,7 +89,7 @@ public class BoggleGUI extends GBFrame
 		if(buttonObj == letter0)
 		{
 			wordCreated = wordCreated + letter0.getLabel().trim();
-			letter1.disable();
+			removeInvalidChoices(0);
 		}
 		if(buttonObj == letter1)
 		{
@@ -157,6 +158,25 @@ public class BoggleGUI extends GBFrame
 		return list.get((int)(Math.random()*list.size())) + "";
 	}
 	
+	public static void removeInvalidChoices(int num)
+	{
+		if(num == 0)
+		{
+			used.get(2).disable();
+			used.get(3).disable();
+			used.get(6).disable();
+			used.get(7).disable();
+			used.get(8).disable();
+			used.get(9).disable();
+			used.get(10).disable();
+			used.get(11).disable();
+			used.get(12).disable();
+			used.get(13).disable();
+			used.get(14).disable();
+			used.get(15).disable();
+		}
+	}
+	
 	public static void main(String[] args)
 	{
 		for(int i=0; i<5;i++)
@@ -210,7 +230,24 @@ public class BoggleGUI extends GBFrame
 			list.add('x');
 			list.add('z');
 		}
-
+		
+		used.add(letter0);
+		used.add(letter1);
+		used.add(letter2);
+		used.add(letter3);
+		used.add(letter4);
+		used.add(letter5);
+		used.add(letter6);
+		used.add(letter7);
+		used.add(letter8);
+		used.add(letter9);
+		used.add(letter10);
+		used.add(letter11);
+		used.add(letter12);
+		used.add(letter13);
+		used.add(letter14);
+		used.add(letter15);
+		
 		BoggleGUI frm = new BoggleGUI();
 		frm.setSize(700,700);
 		frm.setVisible(true);

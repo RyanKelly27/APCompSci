@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Position extends BoggleGUI {
 
-	public ArrayList<Button> buttons = new ArrayList<Button>();
+	public static ArrayList<Button> buttons = new ArrayList<Button>();
 	
 	public Position()
 	{
@@ -25,9 +25,23 @@ public class Position extends BoggleGUI {
 		buttons.add(letter15);
 	}
 	
-	public static void removeInvalidChoices()
+	public static void removeInvalidChoices(int num)
 	{
-		
+		if(num == 0)
+		{
+			buttons.get(2).disable();
+			buttons.get(3).disable();
+			buttons.get(6).disable();
+			buttons.get(7).disable();
+			buttons.get(8).disable();
+			buttons.get(9).disable();
+			buttons.get(10).disable();
+			buttons.get(11).disable();
+			buttons.get(12).disable();
+			buttons.get(13).disable();
+			buttons.get(14).disable();
+			buttons.get(15).disable();
+		}
 	}
 	
 	
